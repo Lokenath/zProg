@@ -7,7 +7,7 @@ function merge(arr1, arr2){
     var i = 1, j = 1;
 
     while(el1 || el2){
-        if((el1 && !el2) || el1<el2){
+        if((el1 && !el2) || (el1<el2)){
             mergedArr.push(el1);
             el1 = arr1[i++];
         }
@@ -21,7 +21,18 @@ function merge(arr1, arr2){
 
 merge([2,5,6,9], [1,2,3,29]);
 
-
+//Merge Sort
+//***************************************************************************************************************************
+function mergeSort(arr,l,r){
+	if(l<r){
+		let m = Math.floor((l+r)/2);
+		
+		mergeSort(arr,l,m);
+		mergeSort(arr,m+1,r);
+		
+		merge(arr,l,m,r);
+	}
+}
 //String reverse
 //***************************************************************************************************************************
 String.prototype.reverese = function(){
@@ -176,6 +187,53 @@ function lcsDynamicProg(str1,str2,m,n){
         }
     }
     return lengthMatrix[m][n];
+}
+//Bubble sort
+//***************************************************************************************************************************
+function bubble(arr){
+	for(i=0;i<arr.length;i++){
+		for(j=i+1;j<arr.length-1;j++){
+			if(arr[i]>arr[j]){
+				let swap;
+				swap = arr[i];
+				arr[i] = arr[j];
+				arr[j] = swap;
+			}
+		}
+	}
+	return arr;
+}
+
+//Insertion sort
+//***************************************************************************************************************************
+function insertion(arr){
+	for(i=0;i<arr.length;i++){
+		for(j=0;j<i;j++){
+			if(arr[i]<arr[j]){
+				let removed = arr.splice(i,1)[0];
+				arr.splice(j,0,removed);
+			}
+		}
+	}
+	return arr;
+}
+
+//Selection sort
+//***************************************************************************************************************************
+function selection(arr){
+	for(i=0;i<arr.length;i++){
+		var min = arr[i];
+		var minIndex = i;
+		for(j=i+1;j<arr.length-1;j++){
+			if(arr[j]<min){
+				min = arr[j];
+				minIndex = j;
+			}
+		}
+		arr.splice(minIndex,1);
+		arr.splice(i,0,min);
+	}
+	return arr;
 }
 
 //Hoisting
