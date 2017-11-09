@@ -123,7 +123,7 @@ var str = "the quick brown fox jumps then quickly blow air";
 
 //Sum of 2 numbers in array equal to given sum
 //***************************************************************************************************************************
-function sumFinder(arr, sum){
+function sumFinder(arr, sum){	
   var differ = {}, 
       len = arr.length,
       substract;
