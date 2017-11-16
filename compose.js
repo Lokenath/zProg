@@ -1,5 +1,5 @@
-var compose = function() {
-  var funcs = Array.protoype.slice.call(arguments);
+var compose = function(...args) {
+  var funcs = args;
 
   return funcs.reduce(function(f,g) {
     return function() {
@@ -7,3 +7,6 @@ var compose = function() {
     };
   });
 };
+
+function half(y){ return y/2; }
+function square(x){ return x*x; }
