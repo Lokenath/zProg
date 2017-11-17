@@ -347,8 +347,8 @@ function greet(age,name){
 }
 
 var person1 = greet.bind(null, 28)//Null since the function is not using this
-person1("Ram");  //Hi Ram Age=25
-person1("Shayam"); //Hi Shayam Age=25
+person1("Ram");  //Hi Ram Age=28
+person1("Shayam"); //Hi Shayam Age=28
 
 
 //Using array methods for Objects
