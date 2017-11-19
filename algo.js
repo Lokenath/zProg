@@ -426,3 +426,9 @@ var combinations = function (string)
 
     return result;
 }
+
+//Override console.log function
+
+console.log = function(x){
+	return "Overridden ~ " + x;
+}
