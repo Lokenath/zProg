@@ -315,6 +315,25 @@ for(var i = 1; i<=5; i++){
 	}(i),1000*i);
 }
 
+//Loop Closure Another example
+
+var arr = [1,2,3];
+
+//Make a new array of functions which will return the following
+//newArr[0]()   =>   2
+//newArr[1]()   =>   4
+//newArr[2]()   =>   5
+
+var newArr = [];
+for(j=0;j<arr.length;j++){
+	var f = function(x){ 
+				return function(){
+					return (x+1)*2; 
+				}
+			}(j);
+	newArr.push(f);
+}
+
 //Bind function Javascript
 //***************************************************************************************************************************
 var data = {a:10};
