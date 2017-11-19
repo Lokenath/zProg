@@ -98,5 +98,4 @@ SinglyList.prototype.reverse = function() {
         current = next;
     }
     this.head = prev;
-    return list;
 }
