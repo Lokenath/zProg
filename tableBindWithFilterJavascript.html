@@ -13,7 +13,7 @@
 var origArray = [{name: "Ram"}, {name: "Shayam"}, {name: "Tom"}];
 
 function renderTable(arr){
-	var tableBody = document.querySelector("#myTable tbody");
+  var tableBody = document.querySelector("#myTable tbody");
   while (tableBody.hasChildNodes()) {
     tableBody.removeChild(tableBody.lastChild);
   }
@@ -31,13 +31,13 @@ function renderTable(arr){
 renderTable(origArray);
 
 function filterArray(){
-	var filteredArr;
+  var filteredArr;
   var that = this;
   filteredArr = origArray.filter(function(eachItem){
   	if(eachItem.name.indexOf(that.value) != -1){
     	return true;
     }
-  });ya
+  });
   renderTable(filteredArr);
 }
 document.getElementById("filterInput").addEventListener("keyup", filterArray);
